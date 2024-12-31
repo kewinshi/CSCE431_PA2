@@ -1,21 +1,69 @@
-
-/* Default header styling */table th {
-    padding: 10px;
+/* Table container to center the table and make it larger */
+.table-container {
+    width: 100%;
+    /* max-width: 1000px; */
+    margin: 20px 0;
+    overflow-x: auto; 
+  }
+  
+  /* Default table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1.2em; /* Larger font size */
+  }
+  
+  /* Table header styling */
+  table th {
+    padding: 12px 15px;
     text-align: left;
     cursor: pointer;
-    background-color: white;
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: goldenrod;
+  }
+  
+  /* Table cell styling */
+  table td {
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: goldenrod;
+  }
+
+  td a {
+    text-decoration: underline;
+    color: goldenrod
+  }
+
+table th {
+    padding: 12px 15px;
+    text-align: left;
+    cursor: pointer;
+    background-color: #333;
+    font-weight: bold;
+    color: goldenrod; /* Default font color */
+    transition: color 0.3s;
 }
 
-/* Styles for ascending order */
 table th.sorted-asc,
 table td.sorted-asc {
-    background-color: #c8e6c9; /* Light green for ascending */
-    color: #333;
+    background-color: #222222;
+    color: white;
 }
 
-/* Styles for descending order */
 table th.sorted-desc,
 table td.sorted-desc {
-    background-color: #ffcccc; /* Light red for descending */
-    color: #333;
+    background-color: #4f4e4e;
+    color: white;
+}
+
+th a {
+    text-decoration:solid;
+    color: goldenrod;
+}
+
+table th.sorted-active {
+    color: black; /* Change font color to black when active */
 }

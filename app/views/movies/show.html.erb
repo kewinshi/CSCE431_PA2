@@ -1,10 +1,11 @@
-<p style="color: green"><%= notice %></p>
+<div class = show_movies_wrapper>
+  <p class="notice-message"><%= notice %></p>
 
-<%= render @movie %>
+  <%= render @movie %>
 
-<div>
-  <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
-  <%= link_to "Back to movies", movies_path %>
-
-  <%= button_to "Destroy this movie", @movie, method: :delete %>
+  <div class="action-links">
+    <%= link_to "Edit this movie", edit_movie_path(@movie), class: "edit-link" %> |
+    <%= link_to "Back to movies", movies_path, class: "back-link" %> |
+    <%= button_to "Destroy this movie", @movie, method: :delete, class: "destroy-button-form" %>
+  </div>
 </div>

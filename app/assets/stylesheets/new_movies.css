@@ -1,0 +1,70 @@
+/* General body styling */
+.new_movies_wrapper {
+    font-family: Arial, sans-serif;
+    background-color: #333; /* Dark background */
+    color: #f4f4f4; /* Light text color */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Style the form */
+form {
+    background-color: #202020; /* Slightly lighter than body background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    text-align: left;
+    /* width: auto; */
+    max-width: 500px;
+    margin: 40px;
+}
+
+/* Form input fields styling */
+form input,
+form select,
+form textarea,
+form button {
+    width: 60%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #444;
+    color: #f4f4f4;
+    font-size: 16px;
+}
+
+/* Submit button */
+form button {
+    background-color: goldenrod;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: darkgoldenrod;
+}
+
+/* Back link styling */
+.back-link {
+    display: inline-block;
+    background-color: #333;
+    color: goldenrod;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.back-link:hover {
+    background-color: darkgoldenrod;
+}
+

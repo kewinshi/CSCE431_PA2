@@ -1,0 +1,59 @@
+.show_movies_wrapper {
+    font-family: Arial, sans-serif;
+    background-color: #333; /* Dark background */
+    color: #f4f4f4; /* Light text color */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+.edit-link {
+    color: goldenrod;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.edit-link:hover {
+    background-color: goldenrod;
+    color: #333;
+}
+
+/* Back link styling */
+.back-link {
+    color: goldenrod;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.back-link:hover {
+    background-color: goldenrod;
+    color: #333;
+}
+
+/* Destroy button styling */
+.destroy-button {
+    background-color: #333;
+    color: goldenrod;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    width: auto;
+}
+
+.destroy-button:hover {
+    background-color: darkgoldenrod;
+    color: #000;
+}
+
+
