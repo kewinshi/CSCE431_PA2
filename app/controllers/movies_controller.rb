@@ -3,8 +3,14 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-    @movies = Movie.all
+    @sort_direction = params[:direction] == 'desc' ? 'desc' : 'asc'
+    if params[:sort].present?
+      @movies = Movie.order("#{params[:sort]} #{@sort_direction}")
+    else
+      @movies = Movie.all
+    end
   end
+  
 
   # GET /movies/1 or /movies/1.json
   def show
@@ -68,3 +74,4 @@ class MoviesController < ApplicationController
       params.expect(movie: [ :title, :rating, :description, :release_date ])
     end
 end
+
