@@ -6,6 +6,10 @@ gem "rails", "~> 8.0.1"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use the Puma web server [https://github.com/puma/puma]
+group :development, :test do
+  # Use sqlite3 as the database for Active Record
+  gem "sqlite3"
+end
 gem "puma", ">= 5.0"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
@@ -65,8 +69,4 @@ group :production do
   gem 'pg' # for Heroku deployment
 end
 
-group :development, :test do
-  # Use sqlite3 as the database for Active Record
-  gem "sqlite3", ">= 2.1"
-end
 
