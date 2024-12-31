@@ -8,6 +8,13 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+def remove_duplicates
+    Movie.group(:title).having("count(*) > 1").pluck(:title).each do |title|
+        movies_to_remove = Movie.where(title: title).offset(1) # Keep the first movie, remove the rest
+        movies_to_remove.destroy_all
+    end
+end
+
 # Seed the RottenPotatoes DB with some movies.
 more_movies = [
 #   {:title => 'My Neighbor Totoro', :rating => 'G',
@@ -31,3 +38,5 @@ more_movies = [
 more_movies.each do |movie|
   Movie.create!(movie)
 end
+
+remove_duplicates
