@@ -10,33 +10,29 @@
 
 def remove_duplicates
     Movie.group(:title).having("count(*) > 1").pluck(:title).each do |title|
-        movies_to_remove = Movie.where(title: title).offset(1) # Keep the first movie, remove the rest
-        movies_to_remove.destroy_all
+      movies_to_remove = Movie.where(title: title).offset(1)
+      movies_to_remove.destroy_all
     end
-end
-
-# Seed the RottenPotatoes DB with some movies.
-more_movies = [
-#   {:title => 'My Neighbor Totoro', :rating => 'G',
-#     :release_date => '16-Apr-1988'},
-#   {:title => 'Green Book', :rating => 'PG-13',
-#     :release_date => '16-Nov-2018'},
-#   {:title => 'Parasite', :rating => 'R',
-#     :release_date => '30-May-2019'},
-#   {:title => 'Nomadland', :rating => 'R',
-#     :release_date => '19-Feb-2021'},
-#   {:title => 'CODA', :rating => 'PG-13',
-#     :release_date => '13-Aug-2021'},
-  {:title => 'Goodwill Hunting', :rating => 'R',
-    :release_date => '5-Mar-1997'},
-  {:title => 'Forest Gump', :rating => 'PG-13',
-    :release_date => '6-Jul-1994'},
-  {:title => 'Godzilla Minus One', :rating => 'PG-13',
-    :release_date => '23-Nov-2023'}
-]
-
-more_movies.each do |movie|
-  Movie.create!(movie)
-end
-
-remove_duplicates
+  end
+  
+  more_movies = [
+    {:title => 'My Neighbor Totoro', :rating => 'G', :release_date => '1988-04-16'},
+    {:title => 'Green Book', :rating => 'PG-13', :release_date => '2018-11-16'},
+    {:title => 'Parasite', :rating => 'R', :release_date => '2019-05-30'},
+    {:title => 'Nomadland', :rating => 'R', :release_date => '2021-02-19'},
+    {:title => 'CODA', :rating => 'PG-13', :release_date => '2021-08-13'},
+    # added 3
+    {:title => 'Goodwill Hunting', :rating => 'R', :release_date => '1997-03-05'},
+    {:title => 'Forest Gump', :rating => 'PG-13', :release_date => '1994-07-06'},
+    {:title => 'Godzilla Minus One', :rating => 'PG-13', :release_date => '2023-11-23'}
+  ]
+  
+  more_movies.each do |movie|
+    Movie.find_or_create_by!(title: movie[:title]) do |m|
+      m.rating = movie[:rating]
+      m.release_date = movie[:release_date]
+    end
+  end
+  
+  remove_duplicates
+  

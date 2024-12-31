@@ -18,7 +18,7 @@ h1 {
   
   .new-movie-button {
     display: inline-block;
-    background-color: goldenrod; /* Green background */
+    background-color: goldenrod; 
     color: black;
     padding: 10px 20px;
     font-size: 16px;
@@ -31,7 +31,7 @@ h1 {
   }
   
   .new-movie-button:hover {
-    background-color: darkgoldenrod; /* Darker green on hover */
+    background-color: darkgoldenrod; 
   }
 
   
